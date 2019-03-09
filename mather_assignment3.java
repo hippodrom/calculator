@@ -8,10 +8,12 @@ package mather_assignment3;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
 import javax.swing.*;
 
 
 public class Mather_Assignment3 extends JFrame {
+    static JPanel cards;
     //declare and initialize global variables
     private static String displayString1 = "";
     private static String displayString2 = "";
@@ -24,10 +26,16 @@ public class Mather_Assignment3 extends JFrame {
     private static char actionButton = '\n';
     
     
+    
+    
     public static void addComponentsToPane(Container myPane) {
         //set up GridBagLayout Pane and Constraints
         myPane.setLayout(new GridBagLayout());
-	GridBagConstraints c = new GridBagConstraints();
+	
+        //cards = new JPanel(new CardLayout());
+        JPanel card1 = new JPanel();
+        card1.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
         
         //add label as the screen
         JLabel screen = new JLabel();
@@ -40,7 +48,7 @@ public class Mather_Assignment3 extends JFrame {
 	c.gridx = 0;
 	c.gridy = 0;
         c.gridwidth = 3;
-	myPane.add(screen, c);
+	card1.add(screen, c);
         
         //add digit calculator buttons to the gridBagLayout
         Button buttonOne = new Button("1");
@@ -66,7 +74,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonOne, c);
+	card1.add(buttonOne, c);
         
         Button buttonTwo = new Button("2");
         c.fill = GridBagConstraints.BOTH;
@@ -88,7 +96,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonTwo, c);
+	card1.add(buttonTwo, c);
         
         Button buttonThree = new Button("3");
         c.fill = GridBagConstraints.BOTH;
@@ -110,7 +118,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonThree, c);
+	card1.add(buttonThree, c);
         
         Button buttonFour = new Button("4");
         c.fill = GridBagConstraints.BOTH;
@@ -132,7 +140,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonFour, c);
+	card1.add(buttonFour, c);
         
         Button buttonFive = new Button("5");
         c.fill = GridBagConstraints.BOTH;
@@ -154,7 +162,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonFive, c);
+	card1.add(buttonFive, c);
         
         Button buttonSix = new Button("6");
         c.fill = GridBagConstraints.BOTH;
@@ -176,7 +184,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonSix, c);
+	card1.add(buttonSix, c);
         
         Button buttonSeven = new Button("7");
         c.fill = GridBagConstraints.BOTH;
@@ -198,7 +206,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonSeven, c);
+	card1.add(buttonSeven, c);
         
         Button buttonEight = new Button("8");
         c.fill = GridBagConstraints.BOTH;
@@ -220,7 +228,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonEight, c);
+	card1.add(buttonEight, c);
         
         Button buttonNine = new Button("9");
         c.fill = GridBagConstraints.BOTH;
@@ -242,7 +250,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonNine, c);
+	card1.add(buttonNine, c);
         
         Button buttonZero = new Button("0");
         c.fill = GridBagConstraints.BOTH;
@@ -264,7 +272,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonZero, c);
+	card1.add(buttonZero, c);
         
         //the decimal button
         Button buttonPoint = new Button(".");
@@ -286,7 +294,7 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	myPane.add(buttonPoint, c);
+	card1.add(buttonPoint, c);
         
         //adding "action" buttons: + - * /
         Button buttonPlus = new Button("+");
@@ -302,7 +310,7 @@ public class Mather_Assignment3 extends JFrame {
                 screen.setText(displayString1);
             }
         });
-	myPane.add(buttonPlus, c);
+	card1.add(buttonPlus, c);
         
         Button buttonMinus = new Button("-");
         c.fill = GridBagConstraints.BOTH;
@@ -317,7 +325,7 @@ public class Mather_Assignment3 extends JFrame {
                 screen.setText(displayString1);
             }
         });
-	myPane.add(buttonMinus, c);
+	card1.add(buttonMinus, c);
         
         Button buttonMult = new Button("*");
         c.fill = GridBagConstraints.BOTH;
@@ -332,7 +340,7 @@ public class Mather_Assignment3 extends JFrame {
                 screen.setText(displayString1);
             }
         });
-	myPane.add(buttonMult, c);
+	card1.add(buttonMult, c);
         
         Button buttonDiv = new Button("/");
         c.fill = GridBagConstraints.BOTH;
@@ -347,7 +355,7 @@ public class Mather_Assignment3 extends JFrame {
                 screen.setText(displayString1);
             }
         });
-	myPane.add(buttonDiv, c);
+	card1.add(buttonDiv, c);
 
         //set up the equals Button to call calculate() function
         //make sure this button takes up 2 columns
@@ -366,7 +374,7 @@ public class Mather_Assignment3 extends JFrame {
                 screen.setText(displayString3);
             }
         });
-	myPane.add(buttonEquals, c);
+	card1.add(buttonEquals, c);
         
         //clear all variables
         Button buttonClear = new Button("C");
@@ -388,7 +396,7 @@ public class Mather_Assignment3 extends JFrame {
             screen.setText(displayString1);
             }
         });
-	myPane.add(buttonClear, c);
+	card1.add(buttonClear, c);
         
         Button buttonSettings = new Button("Settings");
         c.fill = GridBagConstraints.BOTH;
@@ -398,10 +406,20 @@ public class Mather_Assignment3 extends JFrame {
         buttonSettings.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            
+                
             }
         });
-        myPane.add(buttonSettings, c);
+        card1.add(buttonSettings, c);
+        
+        cards = new JPanel(new CardLayout());
+        cards.add(card1);
+        
+        myPane.add(cards);
+    }
+    
+    public void itemStateChanged(ItemEvent evt) {
+        CardLayout cl = (CardLayout)(cards.getLayout());
+        cl.show(cards, (String)evt.getItem());
     }
     
     //perform calculations needed for the '=' button
