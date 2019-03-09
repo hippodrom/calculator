@@ -13,8 +13,8 @@ import javax.swing.*;
 
 
 public class Mather_Assignment3 extends JFrame {
-    static JPanel cards;
     //declare and initialize global variables
+    static JPanel cards;
     private static String displayString1 = "";
     private static String displayString2 = "";
     private static String displayString3 = "";
@@ -32,32 +32,35 @@ public class Mather_Assignment3 extends JFrame {
         //set up GridBagLayout Pane and Constraints
         myPane.setLayout(new GridBagLayout());
 	
-        //cards = new JPanel(new CardLayout());
         JPanel card1 = new JPanel();
         card1.setLayout(new GridBagLayout());
-        GridBagConstraints c = new GridBagConstraints();
+        GridBagConstraints gbc1 = new GridBagConstraints();
+        
+        JPanel card2 = new JPanel();
+        card2.setLayout(new GridBagLayout());
+        GridBagConstraints gbc2 = new GridBagConstraints();
         
         //add label as the screen
         JLabel screen = new JLabel();
         screen.setBackground(Color.white);
         screen.setOpaque(true);
         screen.setHorizontalAlignment(JLabel.RIGHT);
-        c.fill = GridBagConstraints.BOTH;
-        c.ipady = 30;
-        c.insets = new Insets(5,5,5,5); 
-	c.gridx = 0;
-	c.gridy = 0;
-        c.gridwidth = 3;
-	card1.add(screen, c);
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.ipady = 30;
+        gbc1.insets = new Insets(5,5,5,5); 
+	gbc1.gridx = 0;
+	gbc1.gridy = 0;
+        gbc1.gridwidth = 3;
+	card1.add(screen, gbc1);
         
         //add digit calculator buttons to the gridBagLayout
         Button buttonOne = new Button("1");
-        c.fill = GridBagConstraints.BOTH;
-        c.insets = new Insets(0,0,0,0); 
-        c.ipady = 25;
-        c.gridwidth = 1;
-        c.gridx = 0;
-	c.gridy = 1;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.insets = new Insets(0,0,0,0); 
+        gbc1.ipady = 25;
+        gbc1.gridwidth = 1;
+        gbc1.gridx = 0;
+	gbc1.gridy = 1;
         buttonOne.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -74,12 +77,12 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonOne, c);
+	card1.add(buttonOne, gbc1);
         
         Button buttonTwo = new Button("2");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 1;
-	c.gridy = 1;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 1;
+	gbc1.gridy = 1;
         buttonTwo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -96,12 +99,12 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonTwo, c);
+	card1.add(buttonTwo, gbc1);
         
         Button buttonThree = new Button("3");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 2;
-	c.gridy = 1;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 2;
+	gbc1.gridy = 1;
         buttonThree.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -118,12 +121,12 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonThree, c);
+	card1.add(buttonThree, gbc1);
         
         Button buttonFour = new Button("4");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 0;
-	c.gridy = 2;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 0;
+	gbc1.gridy = 2;
         buttonFour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -140,12 +143,12 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonFour, c);
+	card1.add(buttonFour, gbc1);
         
         Button buttonFive = new Button("5");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 1;
-	c.gridy = 2;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 1;
+	gbc1.gridy = 2;
         buttonFive.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -162,12 +165,12 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonFive, c);
+	card1.add(buttonFive, gbc1);
         
         Button buttonSix = new Button("6");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 2;
-	c.gridy = 2;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 2;
+	gbc1.gridy = 2;
         buttonSix.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -184,12 +187,12 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonSix, c);
+	card1.add(buttonSix, gbc1);
         
         Button buttonSeven = new Button("7");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 0;
-	c.gridy = 3;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 0;
+	gbc1.gridy = 3;
         buttonSeven.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -206,12 +209,12 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonSeven, c);
+	card1.add(buttonSeven, gbc1);
         
         Button buttonEight = new Button("8");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 1;
-	c.gridy = 3;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 1;
+	gbc1.gridy = 3;
         buttonEight.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -228,12 +231,12 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonEight, c);
+	card1.add(buttonEight, gbc1);
         
         Button buttonNine = new Button("9");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 2;
-	c.gridy = 3;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 2;
+	gbc1.gridy = 3;
         buttonNine.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -250,12 +253,12 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonNine, c);
+	card1.add(buttonNine, gbc1);
         
         Button buttonZero = new Button("0");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 0;
-	c.gridy = 4;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 0;
+	gbc1.gridy = 4;
         buttonZero.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -272,13 +275,13 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonZero, c);
+	card1.add(buttonZero, gbc1);
         
         //the decimal button
         Button buttonPoint = new Button(".");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 1;
-	c.gridy = 4;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 1;
+	gbc1.gridy = 4;
         buttonPoint.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -294,13 +297,13 @@ public class Mather_Assignment3 extends JFrame {
             }
             }
         });
-	card1.add(buttonPoint, c);
+	card1.add(buttonPoint, gbc1);
         
         //adding "action" buttons: + - * /
         Button buttonPlus = new Button("+");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 2;
-	c.gridy = 4;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 2;
+	gbc1.gridy = 4;
         buttonPlus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -310,12 +313,12 @@ public class Mather_Assignment3 extends JFrame {
                 screen.setText(displayString1);
             }
         });
-	card1.add(buttonPlus, c);
+	card1.add(buttonPlus, gbc1);
         
         Button buttonMinus = new Button("-");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 0;
-	c.gridy = 5;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 0;
+	gbc1.gridy = 5;
         buttonMinus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -325,12 +328,12 @@ public class Mather_Assignment3 extends JFrame {
                 screen.setText(displayString1);
             }
         });
-	card1.add(buttonMinus, c);
+	card1.add(buttonMinus, gbc1);
         
         Button buttonMult = new Button("*");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 1;
-	c.gridy = 5;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 1;
+	gbc1.gridy = 5;
         buttonMult.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -340,12 +343,12 @@ public class Mather_Assignment3 extends JFrame {
                 screen.setText(displayString1);
             }
         });
-	card1.add(buttonMult, c);
+	card1.add(buttonMult, gbc1);
         
         Button buttonDiv = new Button("/");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 2;
-	c.gridy = 5;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 2;
+	gbc1.gridy = 5;
         buttonDiv.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -355,15 +358,15 @@ public class Mather_Assignment3 extends JFrame {
                 screen.setText(displayString1);
             }
         });
-	card1.add(buttonDiv, c);
+	card1.add(buttonDiv, gbc1);
 
         //set up the equals Button to call calculate() function
         //make sure this button takes up 2 columns
         Button buttonEquals = new Button("=");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridwidth = 2;
-        c.gridx = 0;
-	c.gridy = 6;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridwidth = 2;
+        gbc1.gridx = 0;
+	gbc1.gridy = 6;
         buttonEquals.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -374,13 +377,13 @@ public class Mather_Assignment3 extends JFrame {
                 screen.setText(displayString3);
             }
         });
-	card1.add(buttonEquals, c);
+	card1.add(buttonEquals, gbc1);
         
         //clear all variables
         Button buttonClear = new Button("C");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridx = 2;
-	c.gridy = 6;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridx = 2;
+	gbc1.gridy = 6;
         buttonClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -396,20 +399,20 @@ public class Mather_Assignment3 extends JFrame {
             screen.setText(displayString1);
             }
         });
-	card1.add(buttonClear, c);
+	card1.add(buttonClear, gbc1);
         
         Button buttonSettings = new Button("Settings");
-        c.fill = GridBagConstraints.BOTH;
-        c.gridwidth = 3;
-        c.gridx = 0;
-        c.gridy = 7;
+        gbc1.fill = GridBagConstraints.BOTH;
+        gbc1.gridwidth = 3;
+        gbc1.gridx = 0;
+        gbc1.gridy = 7;
         buttonSettings.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 
             }
         });
-        card1.add(buttonSettings, c);
+        card1.add(buttonSettings, gbc1);
         
         cards = new JPanel(new CardLayout());
         cards.add(card1);
