@@ -409,21 +409,38 @@ public class Mather_Assignment3 extends JFrame {
         buttonSettings.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                CardLayout cl = (CardLayout)(cards.getLayout());
+                cl.last(cards);
             }
         });
         card1.add(buttonSettings, gbc1);
         
+        Button buttonOkay = new Button("Okay");
+        gbc2.fill = GridBagConstraints.HORIZONTAL;
+        gbc2.gridwidth = 2;
+        gbc2.gridx = 0;
+        gbc2.gridy = 4;
+        buttonSettings.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cl = (CardLayout)(cards.getLayout());
+                cl.first(cards);
+            }
+        });
+        card2.add(buttonOkay, gbc2);
+        
         cards = new JPanel(new CardLayout());
         cards.add(card1);
+        cards.add(card2);
         
         myPane.add(cards);
     }
     
-    public void itemStateChanged(ItemEvent evt) {
+    
+    /*public void itemStateChanged(ItemEvent evt) {
         CardLayout cl = (CardLayout)(cards.getLayout());
-        cl.show(cards, (String)evt.getItem());
-    }
+        cl.first(cards);
+    }*/
     
     //perform calculations needed for the '=' button
     public static void calculate() {        
